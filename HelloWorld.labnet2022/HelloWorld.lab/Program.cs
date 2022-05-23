@@ -10,7 +10,7 @@ namespace HelloWorld.lab
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hellor world");
+            Console.WriteLine("Hello world");
         }
     }
 }
