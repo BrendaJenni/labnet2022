@@ -44,12 +44,12 @@ namespace Lab.EF.UI
                 }
                 else
                 {
-                    Console.WriteLine("Ingrese un dato válido");
+                    Console.WriteLine("Please, enter valid and correct data");
                 }
                 Console.WriteLine("");
                 if (num != 5)
                 {
-                    Console.WriteLine("Oprima cualquier tecla para regresar al menu");
+                    Console.WriteLine("Press any key to continue to the menu");
                     Console.ReadKey();
                 }
 
@@ -86,9 +86,9 @@ namespace Lab.EF.UI
         {
             try
             {
-                Console.WriteLine("Ingrese la categoria");
+                Console.WriteLine("Enter category");
                 string tempName = Console.ReadLine();
-                Console.WriteLine("Ingrese la descripcion");
+                Console.WriteLine("Enter description");
                 string tempDescription = Console.ReadLine();
 
                 CategoriesLogic categoryLogic = new CategoriesLogic();
@@ -100,12 +100,12 @@ namespace Lab.EF.UI
             }
             catch (FormatException)
             {
-                Console.WriteLine("Ingresó un dato erróneo");
+                Console.WriteLine("Please, enter valid and correct data");
                
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException)
             {
-                Console.WriteLine("Excedió el límite de caracteres");
+                Console.WriteLine("Maximum character limit exceeded in one or more fields");
             }
             catch (Exception e)
             {
@@ -116,7 +116,7 @@ namespace Lab.EF.UI
         {
             try
             {
-                Console.WriteLine("Ingrese la ID por la que desea eliminar");
+                Console.WriteLine("Enter the ID what you're looking for");
                 int tempID = int.Parse(Console.ReadLine());
 
                 CategoriesLogic categoryLogic = new CategoriesLogic();
@@ -125,7 +125,7 @@ namespace Lab.EF.UI
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException)
             {
-                Console.WriteLine($"No es posible eliminar esta ID por que esta siendo utilizada.");
+                Console.WriteLine("It's not possible to delete");
             }
             catch (PersonalException ex)
             {
@@ -133,7 +133,7 @@ namespace Lab.EF.UI
             }
             catch (InvalidOperationException)
             {
-                Console.WriteLine("El ID especificado no existe");
+                Console.WriteLine("The ID does not exist");
             }
             catch (Exception e)
             {
@@ -144,11 +144,11 @@ namespace Lab.EF.UI
         {
             try
             {
-                Console.WriteLine("Ingrese la id buscada");
+                Console.WriteLine("Enter the ID");
                 int tempNum = int.Parse(Console.ReadLine());
-                Console.WriteLine("Ingrese la categoria");
+                Console.WriteLine("Enter category");
                 string tempName = Console.ReadLine();
-                Console.WriteLine("Ingrese la descripcion");
+                Console.WriteLine("Enter description");
                 string tempDescription = Console.ReadLine();
 
                 CategoriesLogic categoryLogic = new CategoriesLogic();
@@ -162,7 +162,7 @@ namespace Lab.EF.UI
             }
             catch (FormatException)
             {
-                Console.WriteLine("Ingresó un dato erroneo");
+                Console.WriteLine("Please, enter valid and correct data");
             }
             catch (PersonalException ex)
             {
@@ -170,11 +170,11 @@ namespace Lab.EF.UI
             }
             catch (InvalidOperationException)
             {
-                Console.WriteLine("El ID especificado no existe");
+                Console.WriteLine("The ID does not exist");
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException)
             {
-                Console.WriteLine("Excedió el límite de caracteres");
+                Console.WriteLine("Maximum character limit exceeded in one or more fields");
             }
             catch (Exception e)
             {

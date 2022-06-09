@@ -8,7 +8,7 @@ namespace Lab.EF.Logic
 {
     public class PersonalException : Exception
     {
-        public override string Message => "El ID ingresado no existe " + base.Message;
+        public override string Message => "The ID does not exist " + base.Message;
         public PersonalException()
         {
 

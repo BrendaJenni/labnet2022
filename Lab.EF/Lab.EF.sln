@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.EF.Data", "Lab.EF.Data\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.EF.Entities", "Lab.EF.Entities\Lab.EF.Entities.csproj", "{2275F68F-1744-421B-9AB0-7D4F8DB33F64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.EF.LogicTests", "Lab.EF.LogicTests\Lab.EF.LogicTests.csproj", "{14E30AF6-D9B8-4F34-8B24-D67EB0090B4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2275F68F-1744-421B-9AB0-7D4F8DB33F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2275F68F-1744-421B-9AB0-7D4F8DB33F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2275F68F-1744-421B-9AB0-7D4F8DB33F64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E30AF6-D9B8-4F34-8B24-D67EB0090B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E30AF6-D9B8-4F34-8B24-D67EB0090B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E30AF6-D9B8-4F34-8B24-D67EB0090B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E30AF6-D9B8-4F34-8B24-D67EB0090B4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
