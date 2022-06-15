@@ -1,0 +1,107 @@
+body {
+  display: block;
+  background-image: url(img/lightscape-LtnPejWDSAY-unsplash.jpg);
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  color: lightsteelblue;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  margin-top: 60px;
+}
+/*funcion error*/
+h2 {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+#fechaNac {
+  width: 50%;
+}
+#edad {
+  width: 20%;
+  margin-left: 20px;
+}
+#fechaedad {
+  display: flex;
+  justify-content: left;
+}
+label {
+  font-family: sans-serif;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 12px;
+}
+a #pform {
+  font-size: 18px;
+}
+form input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 7px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  border: solid rgb(219, 219, 219);
+  outline: 0px;
+  font-size: 16px;
+}
+#botones {
+  display: flex;
+  justify-content: space-around;
+}
+#enviar {
+  width: 90%;
+  margin-right: 3px;
+  padding: 12px;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: none;
+  color: black;
+  background-color: rgb(44, 186, 241);
+}
+#enviar:hover {
+  cursor: pointer;
+  background-color: rgb(22, 110, 145);
+  transition-duration: 0.3s;
+  color: white;
+}
+#reset {
+  margin-left: 3px;
+  width: 90%;
+  padding: 12px;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: none;
+  color: black;
+  background-color: rgb(44, 186, 241);
+}
+#reset:hover {
+  cursor: pointer;
+  background-color: rgb(22, 110, 145);
+  transition-duration: 0.3s;
+  color: white;
+}
+.success {
+  border-color: #2ecc71;
+}
+
+.error {
+  border-color: #e74c3c;
+}
+@media (max-width: 480px) {
+  form {
+    width: 100%;
+  }
+}
