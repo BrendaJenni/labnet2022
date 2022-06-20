@@ -21,8 +21,8 @@
             <tr>
                 <th scope="row">@categories.Id </th>
                 <td>@categories.Name</td>
-                <td>@Html.ActionLink("Actualizar", "InsertUpdate", new { id=categories.Id, name=categories.Name})</td>
-                <td>@Html.ActionLink("Borrar", "Delete", new { id = categories.Id }, new { onclick = "return confirm('Estas seguro de borrar?')" })</td>
+                <td>@Html.ActionLink("Update", "InsertUpdate", new { id=categories.Id, name=categories.Name})</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = categories.Id }, new { onclick = "return confirm('Estas seguro de borrar?')" })</td>
             </tr>
         }
     </tbody>

@@ -47,32 +47,44 @@ namespace Lab.EF.MVC.Controllers
 
                     return RedirectToAction("Index");
                 }
+                catch (ArgumentOutOfRangeException e)
+                {
+                    return RedirectToAction("Index", "Error", new
+                    {
+                        eMessage = e.Message,
+                        cMessage = "The quantity of numbers must be 20"
+                    });
+                }
                 catch (FormatException e)
                 {
                     return RedirectToAction("Index", "Error", new
                     {
-                        eMessage = e.Message
+                        eMessage = e.Message,
+                        cMessage = "Format error"
                     });
                 }
                 catch (InvalidOperationException e)
                 {
                     return RedirectToAction("Index", "Error", new
                     {
-                        eMessage = e.Message
+                        eMessage = e.Message,
+                        cMessage = "Error invalid operation"
                     });
                 }
                 catch (OverflowException e)
                 {
                     return RedirectToAction("Index", "Error", new
                     {
-                        eMessage = e.Message
+                        eMessage = e.Message,
+                        cMessage = "Error, content filled"
                     });
                 }
                 catch (Exception e)
                 {
                     return RedirectToAction("Index", "Error", new
                     {
-                        eMessage=e.Message
+                        eMessage=e.Message,
+                        cMessage = "Error"
                     });
                 }
             }
@@ -85,32 +97,44 @@ namespace Lab.EF.MVC.Controllers
 
                     return RedirectToAction("Index");
                 }
+                catch (ArgumentOutOfRangeException e)
+                {
+                    return RedirectToAction("Index", "Error", new
+                    {
+                        eMessage = e.Message,
+                        cMessage = "The quantity of numbers must be 20"
+                    });
+                }
                 catch (FormatException e)
                 {
                     return RedirectToAction("Index", "Error", new
                     {
-                        eMessage = e.Message
+                        eMessage = e.Message,
+                        cMessage = "Format error"
                     });
                 }
                 catch (OverflowException e)
                 {
                     return RedirectToAction("Index", "Error", new
                     {
-                        eMessage = e.Message
+                        eMessage = e.Message,
+                        cMessage = "Error, content filled"
                     });
                 }
                 catch (InvalidOperationException e)
                 {
                     return RedirectToAction("Index", "Error", new
                     {
-                        eMessage = e.Message
+                        eMessage = e.Message,
+                        cMessage = "Error invalid operation"
                     });
                 }
                 catch (Exception e)
                 {
                     return RedirectToAction("Index", "Error", new
                     {
-                        eMessage = e.Message
+                        eMessage = e.Message,
+                        cMessage = "Error"
                     });
                 }
             }
@@ -126,7 +150,8 @@ namespace Lab.EF.MVC.Controllers
             {
                 return RedirectToAction("Index", "Error", new
                 {
-                    eMessage = e.Message
+                    eMessage = e.Message,
+                    cMessage = "Can't delete an asociated element"
                 });
             }
             

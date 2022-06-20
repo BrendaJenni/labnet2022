@@ -9,9 +9,10 @@ namespace Lab.EF.MVC.Controllers
     public class ErrorController : Controller
     {
         // GET: Error
-        public ActionResult Index(string eMessage)
+        public ActionResult Index(string eMessage,string cMessage)
         {
             ViewBag.Error = eMessage;
+            ViewBag.Message = cMessage;
 
             return View();
         }

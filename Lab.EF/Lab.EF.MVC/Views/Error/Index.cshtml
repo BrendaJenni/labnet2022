@@ -6,8 +6,10 @@
 </head>
 <body>
     <hgroup>
-        <h1>An error ocurred</h1>
-        <h2>@ViewBag.Error</h2>
+        <h1>@ViewBag.Message</h1>
+        <h3>An error ocurred</h3>
+        <h3>@ViewBag.Error</h3>
+
         <a href=@Url.Action("Index", "Categories" )>
             <button type="button" class="btn btn-warning">Back</button>
 
