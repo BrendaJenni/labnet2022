@@ -120,7 +120,6 @@ namespace Lab.EF.UI
                 int tempID = int.Parse(Console.ReadLine());
 
                 CategoriesLogic categoryLogic = new CategoriesLogic();
-                categoryLogic.ValidateID(tempID);
                 categoryLogic.Delete(tempID);
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException)
@@ -152,7 +151,6 @@ namespace Lab.EF.UI
                 string tempDescription = Console.ReadLine();
 
                 CategoriesLogic categoryLogic = new CategoriesLogic();
-                categoryLogic.ValidateID(tempNum);
                 categoryLogic.Update(new Categories
                 {
                     CategoryID = tempNum,

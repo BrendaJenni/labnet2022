@@ -45,9 +45,17 @@ namespace Lab.EF.Logic
         {
             try
             {
-                var categoryToDelete = _context.Categories.First(r => r.CategoryID == id);
-                _context.Categories.Remove(categoryToDelete);
-                _context.SaveChanges();
+                var validate = GetAll().FirstOrDefault(i => i.CategoryID == id);
+                if (validate == null)
+                {
+                    throw new PersonalException();
+                }
+                else
+                {
+                    var categoryToDelete = _context.Categories.First(r => r.CategoryID == id);
+                    _context.Categories.Remove(categoryToDelete);
+                    _context.SaveChanges();
+                }
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException e)
             {
@@ -70,10 +78,18 @@ namespace Lab.EF.Logic
         {
             try
             {
-                var categoriesUpdate = _context.Categories.Single(r => r.CategoryID == ((Categories)category).CategoryID);
-                categoriesUpdate.Description = category.Description;
-                categoriesUpdate.CategoryName = category.CategoryName;
-                _context.SaveChanges();
+                var validate = GetAll().FirstOrDefault(i => i.CategoryID == ((Categories)category).CategoryID);
+                if (validate == null)
+                {
+                    throw new PersonalException();
+                }
+                else
+                {
+                    var categoriesUpdate = _context.Categories.Single(r => r.CategoryID == ((Categories)category).CategoryID);
+                    categoriesUpdate.Description = category.Description;
+                    categoriesUpdate.CategoryName = category.CategoryName;
+                    _context.SaveChanges();
+                } 
             }
             catch (FormatException e)
             {
@@ -97,13 +113,13 @@ namespace Lab.EF.Logic
             }
             
         }
-        public void ValidateID(int id)
-        {
-            var validate = GetAll().FirstOrDefault(i => i.CategoryID == id);
-            if(validate == null)
-            {
-                throw new PersonalException();
-            }
-        }
+        //public void ValidateID(int id)
+        //{
+        //    var validate = GetAll().FirstOrDefault(i => i.CategoryID == id);
+        //    if(validate == null)
+        //    {
+        //        throw new PersonalException();
+        //    }
+        //}
     }
 }

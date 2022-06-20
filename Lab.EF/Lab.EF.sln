@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.EF.Entities", "Lab.EF.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.EF.LogicTests", "Lab.EF.LogicTests\Lab.EF.LogicTests.csproj", "{14E30AF6-D9B8-4F34-8B24-D67EB0090B4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.EF.MVC", "Lab.EF.MVC\Lab.EF.MVC.csproj", "{C373CE94-64B2-43AF-A35F-D3C1BD437635}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{14E30AF6-D9B8-4F34-8B24-D67EB0090B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14E30AF6-D9B8-4F34-8B24-D67EB0090B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14E30AF6-D9B8-4F34-8B24-D67EB0090B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C373CE94-64B2-43AF-A35F-D3C1BD437635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C373CE94-64B2-43AF-A35F-D3C1BD437635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C373CE94-64B2-43AF-A35F-D3C1BD437635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C373CE94-64B2-43AF-A35F-D3C1BD437635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,32 @@
+﻿@model List<Lab.EF.MVC.Models.CategoriesView>
+
+@{
+    ViewBag.Title = "Categories Page";
+}
+
+<h1>Categories page</h1>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categories in Model)
+        {
+            <tr>
+                <th scope="row">@categories.Id </th>
+                <td>@categories.Name</td>
+                <td>@Html.ActionLink("Actualizar", "InsertUpdate", new { id=categories.Id, name=categories.Name})</td>
+                <td>@Html.ActionLink("Borrar", "Delete", new { id = categories.Id }, new { onclick = "return confirm('Estas seguro de borrar?')" })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    @Html.ActionLink("Insert new category","InsertUpdate", new { id= -1,name = "" })
+</div>

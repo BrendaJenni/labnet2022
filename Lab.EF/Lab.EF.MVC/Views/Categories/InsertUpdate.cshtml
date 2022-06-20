@@ -1,0 +1,56 @@
+﻿@model Lab.EF.MVC.Models.CategoriesView
+
+@{
+    ViewBag.Title = "Categories Page";
+}
+
+<h1>Insert or Update</h1>
+
+@using (Html.BeginForm("InsertUpdate", "Categories", FormMethod.Post))
+{
+    
+    <label>Name</label>
+    if (Model.Name != null)
+    {
+        @Html.TextBoxFor(c => c.Name, new { @Value = Model.Name, id = "name" , onkeyup = "fieldsCheck()" })
+    }
+    else
+    {
+        @Html.TextBoxFor(c => c.Name, new { id = "name" , onkeyup = "fieldsCheck()" })
+    }
+
+    <label>ID</label>
+    if (Model.Id != -1)
+    {
+        @Html.TextBoxFor(c => c.Id, new { @Value = Model.Id, @readonly = "readonly", id = "id"})
+    }
+    else
+    {
+        @Html.TextBoxFor(c => c.Id, new { @Value = "" , @readonly = "readonly", id="id" })
+    }
+<button type="submit" class="btn-btn-success" id="submit" disabled>Save</button>
+<script>
+    let Id = document.getElementById("id");
+    let Name = document.getElementById("name");
+    let submit = document.getElementById("submit");
+
+    var numFormat = /^([0-9])*$/;
+    function fieldsCheck() {
+        if (Id.value != "" || Name.value != "") {
+            submit.disabled = false;
+        }
+        else {
+            submit.disabled = true;
+        }
+
+        if (numFormat.test(Name.value)) {
+            Name.style.borderColor = "red";
+            submit.disabled = true;
+        } else {
+            Name.style.borderColor = "green";
+            submit.disabled = false;
+        }
+    }
+</script>
+}
+
