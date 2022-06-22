@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Categories.cs" />
     <Compile Include="Customers.cs" />
+    <Compile Include="Dog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
