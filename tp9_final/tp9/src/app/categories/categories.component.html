@@ -1,0 +1,99 @@
+<div class="col">
+  <h1>Category View</h1>
+</div>
+<div id="myContainer" class="container">
+  <form [formGroup]="formCategory" (ngSubmit)="onSubmit()">
+    <div id="myRow" class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label>Add new category</label>
+          <input formControlName="name" type="text" class="form-control" />
+          <div
+            *ngIf="
+              categoryControl.name?.invalid &&
+              (categoryControl.name?.touched || categoryControl.name?.errors)
+            "
+          >
+            <div *ngIf="categoryControl.name.errors?.['maxLenght']">
+              Field must have at least 3 characters
+            </div>
+            <div *ngIf="categoryControl.name.errors?.['minLenght']">
+              the field must have a maximum of 20 characters
+            </div>
+            <div *ngIf="categoryControl.name.errors?.['pattern']">
+              Field must only have letters
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="Submit" class="col-3">
+        <button
+          class="btn btn-success"
+          type="submit"
+          (click)="saveForm()"
+          [disabled]="this.formCategory.invalid"
+        >
+          Save
+        </button>
+      </div>
+      <div id="Cancel" class="col-3">
+        <button class="btn btn-secondary" type="reset" (click)="cancelForm()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="container" id="myTable">
+  <div class="col-12">
+    <h2 id="tableTitle">Categories list</h2>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col" style="display: flex; justify-content: center">
+          Update
+        </th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of categoriesList">
+        <th scope="row">{{ item.CategoryId }}</th>
+        <td>{{ item.CategoryName }}</td>
+        <td>
+          <form [attr.FormGroup]="updateForm" (ngSubmit)="onSubmit()">
+            <div class="col-4">
+              <input #newName type="text" class="form-control" />
+              <button
+                type="button"
+                class="btn btn-success"
+                (click)="updateCategory(item.CategoryId, newName.value)"
+              >
+                Update
+              </button>
+            </div>
+          </form>
+        </td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-link"
+            (click)="deleteCategory(item.CategoryId)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <p>@2022 Lab.NET</p>
+</footer>
